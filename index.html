@@ -279,6 +279,30 @@ nav ul a:hover,nav ul a[aria-current="page"]{background-size:100% 2px}
 }
 .navbar{backdrop-filter:saturate(1.5) blur(12px);-webkit-backdrop-filter:saturate(1.5) blur(12px)}
 #prog{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--green));z-index:60;pointer-events:none}
+
+/* make it presentable: visible motion */
+@media(prefers-reduced-motion:no-preference){
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes sheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes aura{from{transform:scale(.9);opacity:.55}to{transform:scale(1.12);opacity:1}}
+.hero>div:first-child>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero>div:first-child>*:nth-child(2){animation-delay:.12s}
+.hero>div:first-child>*:nth-child(3){animation-delay:.24s}
+.hero>div:first-child>*:nth-child(4){animation-delay:.36s}
+.hero>div:first-child>*:nth-child(5){animation-delay:.48s}
+.hero h1{background:linear-gradient(100deg,var(--green) 0%,var(--green) 38%,#c9a24b 50%,var(--green) 62%,var(--green) 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:rise .9s cubic-bezier(.2,.7,.2,1) .12s both,sheen 7s ease-in-out 1.2s infinite}
+.hv .float{animation:bob 5.5s ease-in-out infinite}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;top:-10px;right:0;width:min(380px,80vw);height:380px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.30),transparent 66%);pointer-events:none;animation:aura 8s ease-in-out infinite alternate}
+.hero>*{position:relative;z-index:1}
+.bk{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.bk:nth-child(2){animation-delay:0.06s}.bk:nth-child(3){animation-delay:0.12s}.bk:nth-child(4){animation-delay:0.18s}.bk:nth-child(5){animation-delay:0.24s}.bk:nth-child(6){animation-delay:0.30s}.bk:nth-child(7){animation-delay:0.36s}.bk:nth-child(8){animation-delay:0.42s}.bk:nth-child(9){animation-delay:0.48s}.bk:nth-child(10){animation-delay:0.54s}.bk:nth-child(11){animation-delay:0.60s}.bk:nth-child(12){animation-delay:0.66s}
+.rc{transition:transform .3s ease,box-shadow .3s ease}
+.rc:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(0,0,0,.18)}
+.sec::after{content:"";display:block;width:0;height:3px;margin-top:12px;border-radius:2px;background:var(--red);animation:grow 1s ease .3s forwards}
+@keyframes grow{to{width:64px}}
+}
 </style>
 </head>
 <body>
