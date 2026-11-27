@@ -683,5 +683,17 @@ document.querySelectorAll("nav ul a").forEach(function(a){a.addEventListener("cl
 </script>
 
 
+<script id="PHIL_VISIBLE_CARD_V1">
+document.addEventListener("DOMContentLoaded", function () {
+  var arts = document.getElementById("arts");
+  if (!arts || document.getElementById("phil-matarese-feature-card")) return;
+  var card = document.createElement("article");
+  card.id = "phil-matarese-feature-card";
+  card.className = "art";
+  card.style.cssText = "display:grid;grid-template-columns:minmax(130px,220px) 1fr;gap:24px;align-items:start;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:22px 0";
+  card.innerHTML = '<a href="https://www.barnesandnoble.com/w/growing-up-pentecostal-phil-matarese/1149351739" target="_blank" rel="noopener sponsored"><img src="https://wipfandstock.com/cdn/shop/files/9798385266760.jpg?v=1795198507&width=600" alt="Growing Up Pentecostal: A Memoir by Phil Matarese book cover" style="display:block;width:100%;max-width:220px;height:auto;object-fit:contain;border-radius:5px;box-shadow:0 12px 30px rgba(0,0,0,.16)"></a><div><p class="eyebrow" style="color:var(--red)">BOOK HEAVEN — AUTHOR SPOTLIGHT</p><h3 class="serif" style="font-size:clamp(25px,3vw,36px);margin:8px 0">Phil Matarese</h3><p class="meta">FEATURED BOOK · <em>Growing Up Pentecostal: A Memoir</em></p><p>An honest reflection on childhood faith, spiritual discovery, and the journey of examining what we believe. Phil shares the experiences that shaped his understanding of Christianity and how his perspective continued to develop through adulthood.</p><p>His message encourages readers to remain open to learning about other faith traditions, asking thoughtful questions, and developing convictions they can genuinely call their own.</p><p><strong>Publisher:</strong> Resource Publications</p><p><a class="btn" href="https://www.barnesandnoble.com/w/growing-up-pentecostal-phil-matarese/1149351739" target="_blank" rel="noopener sponsored">Discover the Book at Barnes &amp; Noble</a></p></div>';
+  arts.appendChild(card);
+});
+</script>
 </body>
 </html>
