@@ -91,6 +91,9 @@ def page(path, title, desc, body, r, *, ld=(), crumbs=(), image=None, og_type="w
         redirect = ("<script>(function(){var m=" + json.dumps(old, separators=(",", ":")) +
                     ';function go(){var t=m[location.hash.slice(1)];if(t)location.replace(t)}go();addEventListener("hashchange",go)})();</script>\n')
     meta = [f'<meta name="description" content="{e(desc)}">']
+    if home:
+        # Google Search Console ownership check: keep this tag, or verification is lost.
+        meta.append('<meta name="google-site-verification" content="xcdSeF-cPH4rtaBq_4Biw-y9qIrmC3IyF2zMMrQYm94" />')
     if index:
         meta.append(f'<link rel="canonical" href="{url}">')
     else:
